@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({super.key, this.hintText});
+  const CustomTextField({super.key, this.hintText});
 
-  String? hintText;
+  final String? hintText;
   @override
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: Colors.white,
         ),
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.white,
           ),
         ),
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.white,
           ),

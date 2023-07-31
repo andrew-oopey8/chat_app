@@ -1,10 +1,10 @@
-import 'package:chat_app/pages/register_page.dart';
+import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
             const Row(
               children: [
                 Text(
-                  'LOGIN',
+                  'REGISTER',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,
@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            CustomButton(title: 'LOGIN'),
+            CustomButton(title: 'REGISTER'),
             const SizedBox(
               height: 10,
             ),
@@ -67,7 +67,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Don\'t have an account?',
+                  'Already have an account?',
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -81,13 +81,13 @@ class LoginPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return RegisterPage();
+                          return const LoginPage();
                         },
                       ),
                     );
                   },
                   child: const Text(
-                    'Register',
+                    'Login',
                     style: TextStyle(
                       color: Color(
                         0xffC7EDE6,

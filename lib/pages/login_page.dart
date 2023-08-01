@@ -1,3 +1,4 @@
+import 'package:chat_app/constants.dart';
 import 'package:chat_app/pages/register_page.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
@@ -5,33 +6,40 @@ import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
+  static String id = 'LoginPage';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(
-        0xff2B475E,
-      ),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 8.0,
         ),
-        child: Column(
+        child: ListView(
           children: [
-            const Spacer(
-              flex: 1,
+            const SizedBox(
+              height: 75,
             ),
-            Image.asset('assets/images/scholar.png'),
-            const Text(
-              'Scholar Chat',
-              style: TextStyle(
-                fontSize: 32,
-                color: Colors.white,
-                fontFamily: 'Pacifico',
-              ),
+            Image.asset(
+              'assets/images/scholar.png',
+              height: 100,
             ),
-            const Spacer(
-              flex: 2,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Scholar Chat',
+                  style: TextStyle(
+                    fontSize: 32,
+                    color: Colors.white,
+                    fontFamily: 'Pacifico',
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 75,
             ),
             const Row(
               children: [
@@ -47,19 +55,19 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            CustomTextField(
+            const CustomTextField(
               hintText: 'Email',
             ),
             const SizedBox(
               height: 10,
             ),
-            CustomTextField(
+            const CustomTextField(
               hintText: 'Password',
             ),
             const SizedBox(
               height: 20,
             ),
-            CustomButton(title: 'LOGIN'),
+            const CustomButton(title: 'LOGIN'),
             const SizedBox(
               height: 10,
             ),
@@ -77,14 +85,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return RegisterPage();
-                        },
-                      ),
-                    );
+                    Navigator.pushNamed(context, RegisterPage.id);
                   },
                   child: const Text(
                     'Register',
@@ -96,9 +97,6 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            const Spacer(
-              flex: 3,
             ),
           ],
         ),
